@@ -24,9 +24,12 @@ listRound.addEventListener("click", handleInputChange);
 function handleInputChange(event) {
   const target = event.target;
   const listScores = [];
-  console.log(target);
   if (target.type === "number") {
     let inputValue = target.value;
     scoreList[target.dataset.Id].innerHTML = +inputValue;
   }
+  scoreList.forEach((score, i) => {
+    listScores[i] = +score.innerHTML;
+  });
+  console.log(listScores);
 }

@@ -41,6 +41,13 @@ app.post("/api/v1/players", (req, res) => {
   }
 });
 
+app.put("/api/v1/score", (req, res) => {
+  const players = JSON.parse(
+    fs.readFileSync(`${__dirname}/data/players.json`, "utf-8")
+  );
+  res.json({ players });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
